@@ -128,4 +128,12 @@ animals.forEach((element) => {
 	icon.innerHTML = `<span>${element.type}</span>`
 	//appendo le mie icone ai box 
 	box.append(icon);
+	if(element.color === "orange") {
+		icon.classList.add("animals_color");
+	} else if (element.color === "green") {
+		icon.classList.add("users_color");
+	} else {
+		icon.classList.add("veg_color");
+	}
 });
+
