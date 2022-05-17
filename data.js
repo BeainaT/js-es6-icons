@@ -125,6 +125,7 @@ animals.forEach((element) => {
 	icon.classList.add(`${element.prefix}${element.name}`);
 	//aggiungo classe "fa-solid" per visualizzare le icone fontawesome
 	icon.classList.add("fa-solid");
+	icon.innerHTML = `<span>${element.type}</span>`
 	//appendo le mie icone ai box 
 	box.append(icon);
 });
