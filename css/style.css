@@ -3,6 +3,24 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root {
+    --header_color: rgb(22, 171, 251);
+}
+body {
+    font-family: sans-serif;
+}
+h3 {
+    color: white;
+    text-transform: uppercase;
+}
+.select_box {
+    background-color: var(--header_color);
+    text-align: center;
+    padding: 0.5em;
+}
+.title {
+    color: var(--header_color);
+}
 .container {
     margin:auto;
     display: flex;
