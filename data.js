@@ -1,4 +1,4 @@
-[
+const animals = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,19 @@
 		color: 'blue'
 	}
 ];
+
+const mainContainer = document.querySelector(".container");
+//ciclo per ogni elemento dell'array
+animals.forEach((element) => {
+	const box = document.createElement("div");
+	box.classList.add("box");
+	mainContainer.append(box);
+	//creo tag per icone
+	const icon = document.createElement("i");
+	//aggiungo il valore della chiave di mio interesse come classe
+	icon.classList.add(`${element.prefix}${element.name}`);
+	//aggiungo classe "fa-solid" per visualizzare le icone fontawesome
+	icon.classList.add("fa-solid");
+	//appendo le mie icone ai box 
+	box.append(icon);
+});
