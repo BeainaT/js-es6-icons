@@ -128,20 +128,26 @@ animals.forEach((element) => {
 	icon.innerHTML = `<span>${element.type}</span>`
 	//appendo le mie icone ai box 
 	box.append(icon);
-	if(element.color === "orange") {
-		icon.classList.add("animals_color");
-	} else if (element.color === "green") {
-		icon.classList.add("users_color");
-	} else {
-		icon.classList.add("veg_color");
-	}
-	document.getElementById("choice").addEventListener("change", function() {
-		console.log('You selected: ', this.value);
-		if(this.value !== element.type) {
-			box.classList.add("hidden");
-		} else if (this.value === element.type) {
+		//aggiungo classi alle mie icone a cui assegnerò valori in css
+		if(element.color === "orange") {
+			icon.classList.add("animals_color");
+		} else if (element.color === "green") {
+			icon.classList.add("users_color");
+		} else {
+			icon.classList.add("veg_color");
+		};
+	//Seleziono la select nel DOM e aggiungo evento di selezione
+	document.getElementById("choice").addEventListener("change", 
+	function() {
+		//SE il valore selezionato è "all", rimuovo la classe che in css rende display = none
+		if(this.value === "all") {
 			box.classList.remove("hidden");
-		}
+		//ALTRIMENTI SE il valore selezionato è diverso dal valore dell'oggetto, nascondo gli elementi diversi
+		} else if(this.value !== element.type) {
+			box.classList.add("hidden");
+		//ALTRIMENTI mostro il valore degli elementi
+		} else {
+			box.classList.remove("hidden");
+		};
 	});
-	//bugged
 }); 
