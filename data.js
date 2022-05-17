@@ -135,5 +135,13 @@ animals.forEach((element) => {
 	} else {
 		icon.classList.add("veg_color");
 	}
-});
-
+	document.getElementById("choice").addEventListener("change", function() {
+		console.log('You selected: ', this.value);
+		if(this.value !== element.type) {
+			box.classList.add("hidden");
+		} else if (this.value === element.type) {
+			box.classList.remove("hidden");
+		}
+	});
+	//bugged
+}); 

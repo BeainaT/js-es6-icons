@@ -15,11 +15,17 @@
 .box {
     border: 1px solid black;
     border-radius: 2px;
-    padding: 1em;
+    padding: 0.5em 0;
+    font-size: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100px;
+    justify-content: center;
 }
 .box > i {
     display: flex;
     flex-direction: column;
+    gap: 0.5em;
 }
 i.animals_color {
     color: orange;
@@ -32,4 +38,11 @@ i.veg_color {
 }
 i > span {
     color: black;
+    font-size: 10px;
+}
+.hidden {
+    display: none;
+}
+.show {
+    display: flex;
 }
